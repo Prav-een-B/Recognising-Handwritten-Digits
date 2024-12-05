@@ -4,7 +4,7 @@ import numpy as np
 import tensorflow as tf
 
 '''
-this part of code is to build the model
+this part commented off the code is to build the model
 
 
 def normalise(dataset):
@@ -26,13 +26,15 @@ model.add(tf.keras.layers.Dense(128, activation='relu'))
 model.add(tf.keras.layers.Dense(128, activation='relu'))
 model.add(tf.keras.layers.Dense(10, activation='softmax'))
 
+# adam optimizer will be used which takes advantage of the AdaGrad and RMSProp
+
 model.compile(optimizer='adam', loss= 'sparse_categorical_crossentropy', metrics=['accuracy'])
 
-model.fit(x_train,y_train, epochs = 5)
+model.fit(x_train,y_train, epochs = 5) # running 5 epochs to increase accurracy
 
-model.save('MYmod.keras') 
+model.save('MYmod.keras')  # saving the model 
 '''
-
+'''uncomment the above part to build a model'''
 '''
 this function will preprocess images for better results
 '''
