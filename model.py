@@ -4,6 +4,9 @@ import numpy as np
 import tensorflow as tf
 
 '''
+this part of code is to build the model
+
+
 def normalise(dataset):
     dataset = tf.keras.utils.normalize(dataset, axis=1)
     return dataset
@@ -30,12 +33,17 @@ model.fit(x_train,y_train, epochs = 5)
 model.save('MYmod.keras') 
 '''
 
+'''
+this function will preprocess images for better results
+'''
 def preprocess_image(image_path):
     img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
     # Normalize the image
     img = img / 255.0
     return img
-
+'''
+this function will extract the digits using the predict function and argmax function by seeing the maximum among the stimulated nodes to classify the digit
+'''
 def extract_number(image_path, model, window_size=(28, 28), step_size=28):
     # Preprocess the image
     image = preprocess_image(image_path)
@@ -45,10 +53,10 @@ def extract_number(image_path, model, window_size=(28, 28), step_size=28):
     return digit
     
 
-# Load your trained model
+# Load the trained model
 model = tf.keras.models.load_model('MYmod.keras')
 
-# Path to your image
+# Path for the image
 image_path = 'D:/ROLL_NUMBER/img392.jpg'
 
 # Extract numbers using the model
