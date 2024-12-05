@@ -57,7 +57,7 @@ def extract_number(image_path, model, window_size=(28, 28), step_size=28):
 model = tf.keras.models.load_model('MYmod.keras')
 
 # Path for the image
-image_path = 'D:/ROLL_NUMBER/img392.jpg'
+image_path = 'img3.jpg'
 
 # Extract numbers using the model
 numbers = extract_number(image_path, model)
