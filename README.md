@@ -15,5 +15,5 @@ The model achieves an accuracy of approximately 98% on the MNIST test dataset.
 It can accurately predict handwritten digits from images after proper preprocessing.
 
 
-To try this make sure you download the the my_mod.keras model and have the model.py all in one directory.
+To try this make sure you have the my_mod.keras model and have the model.py all in one directory.
 Then you can have your own image to test by changing the path in the model.py
