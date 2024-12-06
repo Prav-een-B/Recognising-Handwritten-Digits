@@ -50,6 +50,10 @@ def extract_number(image_path, model, window_size=(28, 28), step_size=28):
     # Preprocess the image
     image = preprocess_image(image_path)
     h, w = image.shape
+    # Resize the image to the expected input shape of the model
+    image_resized = cv2.resize(image, window_size)
+    # Reshape the image to include the batch dimension
+    image_resized = image_resized.reshape(1, window_size[0], window_size[1], 1)
     prediction = model.predict(window_size)
     digit = np.argmax(prediction)
     return digit
