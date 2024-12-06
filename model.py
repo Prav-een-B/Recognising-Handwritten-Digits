@@ -46,7 +46,7 @@ def preprocess_image(image_path):
 '''
 this function will extract the digits using the predict function and argmax function by seeing the maximum among the stimulated nodes to classify the digit
 '''
-def extract_number(image_path, model, window_size=(28, 28), step_size=28):
+def extract_number(image_path, model, window_size=(28, 28)):
     # Preprocess the image
     image = preprocess_image(image_path)
     h, w = image.shape
