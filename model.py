@@ -54,7 +54,7 @@ def extract_number(image_path, model, window_size=(28, 28)):
     image_resized = cv2.resize(image, window_size)
     # Reshape the image to include the batch dimension
     image_resized = image_resized.reshape(1, window_size[0], window_size[1], 1)
-    prediction = model.predict(window_size)
+    prediction = model.predict(image_resized)
     digit = np.argmax(prediction)
     return digit
     
@@ -63,7 +63,7 @@ def extract_number(image_path, model, window_size=(28, 28)):
 model = tf.keras.models.load_model('MYmod.keras')
 
 # Path for the image
-image_path = 'img3.jpg'
+image_path = r'C:\Users\prave\OneDrive\Documents\GitHub\Recognising-Handwritten-Digits\img_3.jpg'
 
 # Extract numbers using the model
 numbers = extract_number(image_path, model)
